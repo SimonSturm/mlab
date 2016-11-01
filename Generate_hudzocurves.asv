@@ -1,0 +1,29 @@
+clear all
+close all
+
+n = 3;
+r_res = 5;
+for
+    r = linspace(0,1/(n-1)-1e-10,r_res);
+
+    for k = 1:n
+        Tk(:,k) = 1./(1-(k-1)*r);
+    end
+
+    steprep = 1;
+
+    for ind_r = 1:r_res
+        for ind = 1:n
+            steprep = conv(steprep,[Tk(ind_r,ind) 1]);
+        end
+        H_sys(ind_r,:) = steprep;
+        steprep = 1;
+    end
+
+    for ind_r = 1:r_res
+        t = linspace(0,sum(Tk(ind_r,:)),1e3);
+        G_sys = step(1,H_sys(ind_r,:),t);
+        [~,tu(ind_r),tg(ind_r)] = wendetng(t,G_sys);
+end
+
+
