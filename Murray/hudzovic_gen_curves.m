@@ -15,7 +15,7 @@ function curves = hudzovic_gen_curves(resolution)
     if resolution < 2
         resolution = 100;
     end
-
+    
     s = tf('s');
     curves = struct('r', 0, 'tu_tg', 0, 't_tg', 0);
     
