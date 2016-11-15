@@ -6,12 +6,12 @@ function [Tk] = ident_hudzovic(tu,tg,Ks,plot_set)
     step_rep = 1;
 %     [curves_tutg,curves_ttg,r] = hudzo_curves(30,1e3);
 
-    cd('D:\FHNW\Matlab\mlab\Versuch_3\matrices')
+    cd matrices
 %     curves_alex = load('curves_alex.mat');
     curves_tutg = struct2array(load('hudzo_tutg.mat'));
     curves_ttg = struct2array(load('hudzo_ttg.mat'));
     r = struct2array(load('hudzo_r.mat'));
-    cd('D:\FHNW\Matlab\mlab\Versuch_3')
+    cd ..
 
 %     curves = curves_alex.curves_alex.curves;
 %     for k = 1:7

@@ -9,11 +9,11 @@ function [Tk] = ident_sani(tu,tg,Ks,plot_set)
 
     tu_tg = tu/tg;
 %     [curves_tutg,curves_ttg,r] = sani_curves(r_res,r_interpol);
-    cd('D:\FHNW\Matlab\mlab\Versuch_3\matrices')
+    cd matrices
         curves_tu = struct2array(load('tu_sani.mat'));
         curves_tg = struct2array(load('tg_sani.mat'));
         r = struct2array(load('r_sani.mat'));
-    cd('D:\FHNW\Matlab\mlab\Versuch_3')
+    cd ..
     
     curves_tutg = curves_tu./curves_tg;
     curves_ttg = 1./curves_tg;
