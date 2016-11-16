@@ -39,9 +39,9 @@ function [Tk] = ident_sani(tu,tg,Ks,plot_set)
         plot_tutg = plot(r',curves_tutg','LineWidth',1);
         col_mat = cell2mat(get(plot_tutg,'Color'));
         col_nmin = col_mat(n_min,:);
-        legend('n=2','n=3','n=4','n=5','n=6','n=7','n=8')
-        line([0 r_min],[tu_tg tu_tg],'LineStyle','--','Color',col_nmin,'LineWidth',1);
-        line([r_min r_min],[tu_tg 0],'LineStyle','--','Color',col_nmin,'LineWidth',1);
+        legend('n=2','n=3','n=4','n=5','n=6','n=7','n=8','Location','best')
+%         line([0 r_min],[tu_tg tu_tg],'LineStyle','--','Color',col_nmin,'LineWidth',1);
+%         line([r_min r_min],[tu_tg 0],'LineStyle','--','Color',col_nmin,'LineWidth',1);
         grid on 
         grid minor
         ylabel('t_{u}/t_{g}')
@@ -50,16 +50,16 @@ function [Tk] = ident_sani(tu,tg,Ks,plot_set)
 
         subplot(212)
         plot(r',curves_ttg','LineWidth',1);
-        legend('n=2','n=3','n=4','n=5','n=6','n=7','n=8')
-        line([r_min r_min],[1 ttg_min],'LineStyle','--','Color',col_nmin,'LineWidth',1);
-        line([r_min 0],[ttg_min ttg_min],'LineStyle','--','Color',col_nmin,'LineWidth',1);
+        legend('n=2','n=3','n=4','n=5','n=6','n=7','n=8','Location','best')
+%         line([r_min r_min],[1 ttg_min],'LineStyle','--','Color',col_nmin,'LineWidth',1);
+%         line([r_min 0],[ttg_min ttg_min],'LineStyle','--','Color',col_nmin,'LineWidth',1);
         grid on 
         grid minor
         ylabel('T/t_{g}')
         xlabel('r')
         axis([0 1 0 1])
 
-        print -depsc sani_curves
+%         print -depsc sani_curves
 
         % figure('Name','Schrittantwort Strecke')
         % plot(t,g_t,'LineWidth',2)
